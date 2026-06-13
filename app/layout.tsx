@@ -1,18 +1,22 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
+import localFont from 'next/font/local';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { SITE } from '@/lib/site';
 import './globals.css';
 
-const inter = Inter({
-  subsets: ['latin'],
+// Self-hosted fonts (woff2 in app/fonts/) so production builds never depend on
+// fetching from fonts.gstatic.com at build time — deterministic on Vercel.
+const inter = localFont({
+  src: './fonts/Inter-latin.woff2',
+  weight: '100 900',
   variable: '--font-inter',
   display: 'swap',
 });
 
-const playfair = Playfair_Display({
-  subsets: ['latin'],
+const playfair = localFont({
+  src: './fonts/PlayfairDisplay-latin.woff2',
+  weight: '400 900',
   variable: '--font-playfair',
   display: 'swap',
 });
