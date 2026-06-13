@@ -81,7 +81,7 @@ function renderText({ subject, rows, message }: EmailPayload) {
 
 export async function sendEmail(payload: EmailPayload) {
   const transport = getTransport();
-  const to = process.env.EMAIL_TO || SITE.email;
+  const to = process.env.EMAIL_TO || SITE.formInbox;
   const from = process.env.EMAIL_FROM || process.env.SMTP_USER!;
   await transport.sendMail({
     from: `"${SITE.name} Website" <${from}>`,

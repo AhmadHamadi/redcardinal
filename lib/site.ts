@@ -19,6 +19,9 @@ export const SITE = {
   phone: '571-746-5515',
   phoneE164: '+15717465515',
   email: 'info@redcardinalaviation.com',
+  // Inbox that contact + discovery form submissions are delivered to.
+  // Can be overridden at runtime with the EMAIL_TO env var.
+  formInbox: 'redcardinalaviation@gmail.com',
   hours: [
     { day: 'Monday – Friday', time: '8:00 AM – 7:00 PM' },
     { day: 'Saturday – Sunday', time: '7:00 AM – 8:00 PM' },
