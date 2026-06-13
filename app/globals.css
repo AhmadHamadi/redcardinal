@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #0B1220;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-feature-settings: 'rlig' 1, 'calt' 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+  h1 { @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05]; }
+  h2 { @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1]; }
+  h3 { @apply text-2xl md:text-3xl font-semibold leading-tight; }
+  h4 { @apply text-xl md:text-2xl font-semibold; }
+  p  { @apply leading-relaxed; }
+  a  { @apply transition-colors; }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand;
+  }
+  .btn-primary {
+    @apply btn bg-brand text-white shadow-card hover:bg-brand-600 hover:shadow-card-hover hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply btn border-2 border-white/80 text-white hover:bg-white hover:text-ink;
+  }
+  .btn-ghost {
+    @apply btn border-2 border-ink/15 text-ink hover:border-brand hover:text-brand;
+  }
+  .btn-dark {
+    @apply btn bg-ink text-white hover:bg-ink-soft;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-brand;
+  }
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+  .card {
+    @apply rounded-2xl bg-white shadow-card transition-all duration-300 hover:shadow-card-hover;
+  }
+  .prose-blog {
+    @apply max-w-none text-ink-muted;
+  }
+  .prose-blog h2 { @apply mt-12 mb-4 text-ink; }
+  .prose-blog h3 { @apply mt-8 mb-3 text-ink; }
+  .prose-blog p  { @apply mb-5 text-base md:text-lg leading-relaxed; }
+  .prose-blog ul { @apply mb-5 list-disc pl-6 space-y-2; }
+  .prose-blog ol { @apply mb-5 list-decimal pl-6 space-y-2; }
+  .prose-blog a  { @apply text-brand underline-offset-4 hover:underline; }
+  .prose-blog blockquote {
+    @apply my-6 border-l-4 border-brand pl-5 italic text-ink;
+  }
+}
+
+::selection {
+  background: #B0252B;
+  color: #ffffff;
+}
